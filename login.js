@@ -1,86 +1,60 @@
-// -----------------------------
-// ROLE SELECTION
-// -----------------------------
-let selectedRole = null;
+function selectRole(el) {
+  document.querySelectorAll('.role-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  selectedRole = el.dataset.role;
+  document.getElementById('btn-label').textContent = ROLE_LABELS[selectedRole];
+  document.getElementById('error-msg').classList.remove('show');
+}
 
-// Attach click listeners to role buttons
-document.querySelectorAll(".role-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    selectedRole = btn.dataset.role;
+async function doLogin() {
+  const email    = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const errEl    = document.getElementById('error-msg');
+  const btn      = document.getElementById('access-btn');
+  const spinner  = document.getElementById('spinner');
+  const label    = document.getElementById('btn-label');
 
-    // Visual feedback (optional)
-    document.querySelectorAll(".role-btn").forEach(b => b.classList.remove("active-role"));
-    btn.classList.add("active-role");
+  errEl.classList.remove('show');
 
-    console.log("Selected role:", selectedRole);
+  if (!email || !password) {
+    errEl.textContent = 'Please enter your email and password.';
+    errEl.classList.add('show');
+    return;
+  }
+
+  // Loading state
+  btn.disabled = true;
+  label.style.display = 'none';
+  spinner.style.display = 'block';
+
+  // FIRST SUPABASE FLOW — no profiles table
+  const { data, error } = await sb.auth.signInWithPassword({
+    email,
+    password
   });
-});
 
-// -----------------------------
-// LOGIN SUBMISSION
-// -----------------------------
-document.getElementById("loginForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+  // Restore button
+  spinner.style.display = 'none';
+  label.style.display = 'block';
+  btn.disabled = false;
 
-  const errorBox = document.getElementById("loginError");
-  errorBox.textContent = "";
-
-  // Ensure role is selected
-  if (!selectedRole) {
-    errorBox.textContent = "Please select a role.";
+  if (error) {
+    errEl.textContent = 'Invalid email or password. Please try again.';
+    errEl.classList.add('show');
     return;
   }
 
-  // Get form values
-  const form = new FormData(e.target);
-  const email = form.get("email");
-  const password = form.get("password");
+  // Redirect based ONLY on selectedRole (original flow)
+  window.location.href = ROLE_ROUTES[selectedRole];
+}
 
-  // Ensure Supabase is initialized
-  if (typeof supabase === "undefined") {
-    errorBox.textContent = "Supabase is not initialized.";
-    console.error("Supabase object is undefined.");
-    return;
-  }
+function redirectByRole(user) {
+  // FIRST SUPABASE FLOW — no DB role lookup
+  // Just send them to whatever role they last selected
+  window.location.href = ROLE_ROUTES[selectedRole];
+}
 
-  try {
-    // Authenticate
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password
-    });
-
-    if (error) {
-      errorBox.textContent = "Invalid email or password.";
-      console.error(error);
-      return;
-    }
-
-    // -----------------------------
-    // ROLE‑BASED REDIRECTS
-    // -----------------------------
-    if (selectedRole === "admin") {
-      window.location.href = "/admin_dashboard.html";
-      return;
-    }
-
-    if (selectedRole === "technician") {
-      window.location.href = "/tech_dashboard.html";
-      return;
-    }
-
-    if (selectedRole === "fsc") {
-      window.location.href = "/fsc_dashboard.html";
-      return;
-    }
-
-    if (selectedRole === "woc") {
-      window.location.href = "/woc_dashboard.html";
-      return;
-    }
-
-  } catch (err) {
-    errorBox.textContent = "A connection error occurred.";
-    console.error(err);
-  }
-});
+function togglePw() {
+  const input = document.getElementById('password');
+  input.type = input.type === 'password' ? 'text' : 'password';
+}
