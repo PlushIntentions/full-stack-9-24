@@ -1,4 +1,4 @@
-const supabase = window.supabase.createClient(
+const supabaseClient = window.supabase.createClient(
   "https://gsneugdwoxpibajghwge.supabase.co",
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdzbmV1Z2R3b3hwaWJhamdod2dlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgyNjk2NjUsImV4cCI6MjA5Mzg0NTY2NX0.wmZDgY_fAfeiDlZzWLA4KT5_dlbyG7Ns1W4z_HZH8Ws"
 );
