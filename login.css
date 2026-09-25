@@ -94,3 +94,25 @@ body {
   color: #FF6B6B;
   margin-top: 10px;
 }
+.role-btn {
+  background: #D2C8BD; /* earthy taupe */
+  border: 1px solid #C9C9C9; /* silver */
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #1E1E1E;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.role-btn:hover {
+  background: #C7BEB4;
+}
+
+/* ACTIVE ROLE HIGHLIGHT */
+.active-role {
+  background: #4A6C82; /* steel blue accent */
+  color: #FFFFFF;
+  border-color: #4A6C82;
+  box-shadow: 0 0 8px rgba(74,108,130,0.4); /* subtle tech glow */
+}
