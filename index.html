@@ -3,40 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Client Portal Login</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Plush Intentions Login</title>
+  <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
 
-  <header class="header">
-    <h1>Client Portal</h1>
-  </header>
+<div class="login-container">
 
-  <main class="profile-container">
+  <div class="login-card">
 
-    <form id="loginForm" class="client-card">
+    <img src="assets/logo.png" class="logo" alt="Plush Intentions LLC">
 
-      <div class="profile-field">
-        <label>Email</label>
-        <input name="email" type="email" required>
+    <h2 class="title">Select Your Role</h2>
+
+    <div class="role-grid">
+      <button class="role-btn" data-role="admin">Admin</button>
+      <button class="role-btn" data-role="technician">Technician</button>
+      <button class="role-btn" data-role="fsc">Field Service Coordinator</button>
+      <button class="role-btn" data-role="woc">Work Orders Coordinator</button>
+    </div>
+
+    <form id="loginForm">
+
+      <div class="field">
+        <label>Email Address</label>
+        <input type="email" name="email" required>
       </div>
 
-      <div class="profile-field">
+      <div class="field">
         <label>Password</label>
-        <input name="password" type="password" required>
+        <input type="password" name="password" required>
       </div>
 
-      <button class="edit-btn" type="submit">Login</button>
+      <button type="submit" class="login-btn">Continue</button>
 
-      <p id="loginError" style="color:red; margin-top:10px;"></p>
+      <p id="loginError" class="error"></p>
 
     </form>
 
-  </main>
+  </div>
 
-  <script src="supabase.js"></script>
-  <script src="client-login.js"></script>
+</div>
+
+<script src="supabase.js"></script>
+<script src="login.js"></script>
 
 </body>
 </html>
