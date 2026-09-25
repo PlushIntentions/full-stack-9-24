@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>Welcome</h1>
+  </header>
+
+  <main class="profile-container">
+
+    <div id="clientHeader" class="client-card"></div>
+
+    <h2 class="section-title">Upcoming Job</h2>
+    <div id="upcomingJob"></div>
+
+    <h2 class="section-title">Recent Communication</h2>
+    <div id="recentMessages"></div>
+
+    <h2 class="section-title">Outstanding Invoice</h2>
+    <div id="invoiceStatus"></div>
+
+    <h2 class="section-title">Documents</h2>
+    <div id="docPreview"></div>
+
+    <button class="view-btn" onclick="goTo('client-jobs.html')">View All Jobs</button>
+    <button class="view-btn" onclick="goTo('client-documents.html')">View Documents</button>
+    <button class="view-btn" onclick="goTo('client-invoice.html')">View Billing</button>
+    <button class="view-btn" onclick="goTo('client-communication.html')">Communication Log</button>
+    <button class="view-btn" onclick="goTo('client-service-history.html')">Service History</button>
+
+  </main>
+
+  <script src="supabase.js"></script>
+  <script src="client-dashboard.js"></script>
+
+</body>
+</html>

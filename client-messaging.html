@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messaging Center</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>Messages</h1>
+  </header>
+
+  <main class="profile-container">
+
+    <div id="conversationList" class="list">
+      <div class="loading">Loading conversations...</div>
+    </div>
+
+    <h2 class="section-title">Send Message</h2>
+
+    <form id="sendForm" class="client-card">
+
+      <div class="profile-field">
+        <label>Job</label>
+        <select name="job_id" id="jobSelect"></select>
+      </div>
+
+      <div class="profile-field">
+        <label>Message</label>
+        <textarea name="content" required></textarea>
+      </div>
+
+      <button class="edit-btn" type="submit">Send</button>
+
+      <p id="sendMessage" style="margin-top:10px;"></p>
+
+    </form>
+
+  </main>
+
+  <script src="supabase.js"></script>
+  <script src="client-messaging.js"></script>
+
+</body>
+</html>

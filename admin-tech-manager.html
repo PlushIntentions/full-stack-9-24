@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technician Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <h1>Technician Manager</h1>
+</header>
+
+<main class="profile-container">
+
+  <h2 class="section-title">Technicians</h2>
+  <div id="techList"></div>
+
+  <h2 class="section-title">Add Technician</h2>
+  <form id="addTechForm" class="client-card">
+
+    <div class="profile-field">
+      <label>Name</label>
+      <input name="name" required>
+    </div>
+
+    <div class="profile-field">
+      <label>Phone</label>
+      <input name="phone">
+    </div>
+
+    <div class="profile-field">
+      <label>Email</label>
+      <input name="email">
+    </div>
+
+    <div class="profile-field">
+      <label>Skills</label>
+      <input name="skills" placeholder="Networking, Windows, Servers">
+    </div>
+
+    <button class="edit-btn" type="submit">Add Technician</button>
+    <p id="addMessage"></p>
+  </form>
+
+</main>
+
+<script src="supabase.js"></script>
+<script src="admin-tech-manager.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule Appointment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>Schedule Appointment</h1>
+  </header>
+
+  <main class="profile-container">
+
+    <form id="apptForm" class="client-card">
+
+      <div class="profile-field">
+        <label>Service Type</label>
+        <select name="service_type" required>
+          <option value="General Service">General Service</option>
+          <option value="Installation">Installation</option>
+          <option value="Repair">Repair</option>
+          <option value="Inspection">Inspection</option>
+        </select>
+      </div>
+
+      <div class="profile-field">
+        <label>Date</label>
+        <input name="date" type="date" required>
+      </div>
+
+      <div class="profile-field">
+        <label>Time</label>
+        <input name="time" type="time" required>
+      </div>
+
+      <div class="profile-field">
+        <label>Notes (optional)</label>
+        <textarea name="notes"></textarea>
+      </div>
+
+      <button class="edit-btn" type="submit">Book Appointment</button>
+
+      <p id="apptMessage" style="margin-top:10px;"></p>
+
+    </form>
+
+    <h2 class="section-title">Upcoming Appointments</h2>
+    <div id="apptList"></div>
+
+  </main>
+
+  <script src="supabase.js"></script>
+  <script src="client-appt.js"></script>
+
+</body>
+</html>

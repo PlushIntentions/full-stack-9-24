@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technician Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <h1>Technician Dashboard</h1>
+</header>
+
+<main class="profile-container">
+
+  <div id="techHeader" class="client-card"></div>
+
+  <h2 class="section-title">Today's Jobs</h2>
+  <div id="jobList"></div>
+
+  <h2 class="section-title">Earnings</h2>
+  <div id="earningsBox"></div>
+
+  <h2 class="section-title">Notifications</h2>
+  <div id="notifList"></div>
+
+  <h2 class="section-title">Availability</h2>
+  <button id="toggleAvail" class="edit-btn">Toggle Availability</button>
+
+  <h2 class="section-title">Update Location</h2>
+  <button id="updateLocation" class="view-btn">Send Current Location</button>
+
+</main>
+
+<script src="supabase.js"></script>
+<script src="tech-dashboard.js"></script>
+
+</body>
+</html>

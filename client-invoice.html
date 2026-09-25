@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Invoice & Billing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>Invoice & Billing</h1>
+  </header>
+
+  <main class="profile-container">
+
+    <div id="invoiceHeader" class="client-card"></div>
+
+    <h2 class="section-title">Line Items</h2>
+    <div id="invoiceItems"></div>
+
+    <h2 class="section-title">Totals</h2>
+    <div id="invoiceTotals" class="client-card"></div>
+
+    <button class="edit-btn" id="markPaidBtn">Mark Invoice as Paid</button>
+
+  </main>
+
+  <script src="supabase.js"></script>
+  <script src="client-invoice.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <h1>Client Manager</h1>
+</header>
+
+<main class="profile-container">
+
+  <h2 class="section-title">Clients</h2>
+  <div id="clientList"></div>
+
+  <h2 class="section-title">Add Client</h2>
+  <form id="addClientForm" class="client-card">
+
+    <div class="profile-field">
+      <label>Name</label>
+      <input name="name" required>
+    </div>
+
+    <div class="profile-field">
+      <label>Phone</label>
+      <input name="phone">
+    </div>
+
+    <div class="profile-field">
+      <label>Email</label>
+      <input name="email">
+    </div>
+
+    <div class="profile-field">
+      <label>Address</label>
+      <input name="address">
+    </div>
+
+    <button class="edit-btn" type="submit">Add Client</button>
+    <p id="addMessage"></p>
+  </form>
+
+</main>
+
+<script src="supabase.js"></script>
+<script src="admin-client-manager.js"></script>
+
+</body>
+</html>

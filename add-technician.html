@@ -1,0 +1,40 @@
+<form id="addForm">
+  <label>full_name</label>
+  <input name="full_name">
+
+  <label>phone</label>
+  <input name="phone">
+
+  <label>email</label>
+  <input name="email">
+
+  <label>skills</label>
+  <input name="skills">
+
+  <label>radius</label>
+  <input name="radius" type="number">
+
+  <button type="submit">Save</button>
+</form>
+
+<script>
+document.getElementById("addForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const form = new FormData(e.target);
+
+  const { error } = await supabase
+    .from("technicians")
+    .insert({
+      full_name: form.get("full_name"),
+      phone: form.get("phone"),
+      email: form.get("email"),
+      skills: form.get("skills"),
+      radius: form.get("radius"),
+      status: "pending_documents",
+      role: "technician"
+    });
+
+  if (!error) window.location.href = "index.html";
+});
+</script>

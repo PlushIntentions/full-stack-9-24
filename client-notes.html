@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Notes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>Client Notes</h1>
+  </header>
+
+  <main class="profile-container">
+
+    <div id="notesList" class="list">
+      <div class="loading">Loading notes...</div>
+    </div>
+
+    <h2 class="section-title">Add Note</h2>
+
+    <form id="noteForm" class="profile-card">
+
+      <div class="profile-field">
+        <label>note</label>
+        <textarea name="note"></textarea>
+      </div>
+
+      <div class="profile-field">
+        <label>created_by</label>
+        <input name="created_by" placeholder="admin, system, technician, etc.">
+      </div>
+
+      <button class="edit-btn" type="submit">Add Note</button>
+    </form>
+
+  </main>
+
+  <script src="supabase.js"></script>
+  <script src="client-notes.js"></script>
+</body>
+</html>

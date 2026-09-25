@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Technician</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>Edit Technician</h1>
+  </header>
+
+  <main class="profile-container">
+    <form id="editForm" class="profile-card">
+
+      <div class="profile-field">
+        <label>full_name</label>
+        <input name="full_name">
+      </div>
+
+      <div class="profile-field">
+        <label>phone</label>
+        <input name="phone">
+      </div>
+
+      <div class="profile-field">
+        <label>email</label>
+        <input name="email">
+      </div>
+
+      <div class="profile-field">
+        <label>skills</label>
+        <input name="skills">
+      </div>
+
+      <div class="profile-field">
+        <label>radius</label>
+        <input name="radius" type="number">
+      </div>
+
+      <div class="profile-field">
+        <label>status</label>
+        <input name="status">
+      </div>
+
+      <div class="profile-field">
+        <label>role</label>
+        <input name="role">
+      </div>
+
+      <div class="profile-field">
+        <label>available</label>
+        <select name="available">
+          <option value="true">true</option>
+          <option value="false">false</option>
+        </select>
+      </div>
+
+      <div class="profile-field">
+        <label>same_day_service</label>
+        <select name="same_day_service">
+          <option value="true">true</option>
+          <option value="false">false</option>
+        </select>
+      </div>
+
+      <div class="profile-field">
+        <label>lat</label>
+        <input name="lat" type="number" step="0.000001">
+      </div>
+
+      <div class="profile-field">
+        <label>lng</label>
+        <input name="lng" type="number" step="0.000001">
+      </div>
+
+      <button class="edit-btn" type="submit">Update Technician</button>
+    </form>
+  </main>
+
+  <script src="supabase.js"></script>
+  <script src="edit-technician.js"></script>
+</body>
+</html>

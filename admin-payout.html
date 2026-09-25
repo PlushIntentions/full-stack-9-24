@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payout Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <h1>Payout Manager</h1>
+</header>
+
+<main class="profile-container">
+
+  <h2 class="section-title">Filters</h2>
+  <div class="client-card" id="filterBox">
+
+    <div class="profile-field">
+      <label>Technician</label>
+      <select id="filterTech">
+        <option value="">All Technicians</option>
+      </select>
+    </div>
+
+    <div class="profile-field">
+      <label>Date Start</label>
+      <input type="date" id="filterStart">
+    </div>
+
+    <div class="profile-field">
+      <label>Date End</label>
+      <input type="date" id="filterEnd">
+    </div>
+
+    <button class="edit-btn" id="applyFilters">Apply Filters</button>
+  </div>
+
+  <h2 class="section-title">Unpaid Earnings</h2>
+  <div id="earningsList"></div>
+
+  <button class="edit-btn" id="createPayoutBtn">Create Payout</button>
+  <p id="payoutMessage"></p>
+
+  <h2 class="section-title">Payout History</h2>
+  <div id="payoutList"></div>
+
+</main>
+
+<script src="supabase.js"></script>
+<script src="admin-payout.js"></script>
+
+</body>
+</html>

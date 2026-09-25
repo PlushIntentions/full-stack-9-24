@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Job Editor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <h1>Edit Job</h1>
+</header>
+
+<main class="profile-container">
+
+  <div id="jobCard" class="client-card"></div>
+
+  <h2 class="section-title">Edit Job Details</h2>
+  <form id="jobForm" class="client-card">
+    <div class="profile-field">
+      <label>Title</label>
+      <input name="title" required>
+    </div>
+
+    <div class="profile-field">
+      <label>Description</label>
+      <textarea name="description"></textarea>
+    </div>
+
+    <div class="profile-field">
+      <label>Scheduled Start</label>
+      <input type="datetime-local" name="scheduled_start" required>
+    </div>
+
+    <div class="profile-field">
+      <label>Status</label>
+      <select name="status">
+        <option value="scheduled">Scheduled</option>
+        <option value="assigned">Assigned</option>
+        <option value="in_progress">In Progress</option>
+        <option value="completed">Completed</option>
+        <option value="cancelled">Cancelled</option>
+      </select>
+    </div>
+
+    <button class="edit-btn" type="submit">Save Changes</button>
+    <p id="jobMessage"></p>
+  </form>
+
+  <h2 class="section-title">Assign Technician</h2>
+  <form id="assignForm" class="client-card">
+    <div class="profile-field">
+      <label>Technician</label>
+      <select name="technician_id" id="techSelect"></select>
+    </div>
+
+    <button class="edit-btn" type="submit">Assign Technician</button>
+    <p id="assignMessage"></p>
+  </form>
+
+  <h2 class="section-title">Job Photos</h2>
+  <div id="photoList"></div>
+
+  <h2 class="section-title">Job Notes</h2>
+  <div id="noteList"></div>
+
+  <h2 class="section-title">Messages</h2>
+  <div id="msgList"></div>
+
+  <button class="view-btn" id="deleteBtn">Delete Job</button>
+
+</main>
+
+<script src="supabase.js"></script>
+<script src="admin-job-editor.js"></script>
+
+</body>
+</html>

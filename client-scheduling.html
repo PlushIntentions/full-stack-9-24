@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Scheduling</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>Client Scheduling</h1>
+  </header>
+
+  <main class="profile-container">
+
+    <div id="scheduleList" class="list">
+      <div class="loading">Loading schedule...</div>
+    </div>
+
+    <h2 class="section-title">Schedule New Job</h2>
+
+    <form id="scheduleForm" class="profile-card">
+
+      <div class="profile-field">
+        <label>title</label>
+        <input name="title">
+      </div>
+
+      <div class="profile-field">
+        <label>description</label>
+        <textarea name="description"></textarea>
+      </div>
+
+      <div class="profile-field">
+        <label>scheduled_start</label>
+        <input type="datetime-local" name="scheduled_start">
+      </div>
+
+      <div class="profile-field">
+        <label>scheduled_duration (minutes)</label>
+        <input type="number" name="scheduled_duration">
+      </div>
+
+      <div class="profile-field">
+        <label>technician_id</label>
+        <input name="technician_id">
+      </div>
+
+      <button class="edit-btn" type="submit">Create Job</button>
+    </form>
+
+  </main>
+
+  <script src="supabase.js"></script>
+  <script src="client-scheduling.js"></script>
+</body>
+</html>

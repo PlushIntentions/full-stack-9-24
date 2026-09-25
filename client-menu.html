@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Portal Menu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <button id="menuBtn" class="menu-btn">☰</button>
+    <h1>Client Portal</h1>
+  </header>
+
+  <nav id="sideMenu" class="side-menu">
+    <div class="menu-header">Navigation</div>
+
+    <a class="menu-link" onclick="goTo('client-dashboard.html')">Dashboard</a>
+    <a class="menu-link" onclick="goTo('client-jobs.html')">Jobs</a>
+    <a class="menu-link" onclick="goTo('client-documents.html')">Documents</a>
+    <a class="menu-link" onclick="goTo('client-invoice.html')">Billing</a>
+    <a class="menu-link" onclick="goTo('client-communication.html')">Communication</a>
+    <a class="menu-link" onclick="goTo('client-service-history.html')">Service History</a>
+    <a class="menu-link" onclick="goTo('client-profile.html')">Profile</a>
+    <a class="menu-link" onclick="goTo('client-settings.html')">Settings</a>
+
+    <div class="menu-footer">
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <script src="supabase.js"></script>
+  <script src="client-menu.js"></script>
+
+</body>
+</html>

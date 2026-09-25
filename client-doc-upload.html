@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Documents</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>Upload Documents</h1>
+  </header>
+
+  <main class="profile-container">
+
+    <form id="uploadForm" class="client-card">
+
+      <div class="profile-field">
+        <label>Document Name</label>
+        <input name="doc_name" placeholder="e.g., ID Card, Lease Agreement" required>
+      </div>
+
+      <div class="profile-field">
+        <label>Select File</label>
+        <input name="file" type="file" required>
+      </div>
+
+      <button class="edit-btn" type="submit">Upload Document</button>
+
+      <p id="uploadMessage" style="margin-top:10px;"></p>
+
+    </form>
+
+    <h2 class="section-title">Your Documents</h2>
+    <div id="docList"></div>
+
+  </main>
+
+  <script src="supabase.js"></script>
+  <script src="client-doc-upload.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notification Center</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <h1>Notification Center</h1>
+</header>
+
+<main class="profile-container">
+
+  <h2 class="section-title">Filters</h2>
+  <div class="client-card" id="filterBox">
+
+    <div class="profile-field">
+      <label>Recipient Type</label>
+      <select id="filterType">
+        <option value="">All</option>
+        <option value="technician">Technician</option>
+        <option value="client">Client</option>
+        <option value="admin">Admin</option>
+        <option value="system">System</option>
+      </select>
+    </div>
+
+    <div class="profile-field">
+      <label>Date Start</label>
+      <input type="date" id="filterStart">
+    </div>
+
+    <div class="profile-field">
+      <label>Date End</label>
+      <input type="date" id="filterEnd">
+    </div>
+
+    <button class="edit-btn" id="applyFilters">Apply Filters</button>
+  </div>
+
+  <h2 class="section-title">Send Notification</h2>
+  <form id="sendForm" class="client-card">
+
+    <div class="profile-field">
+      <label>Recipient Type</label>
+      <select name="recipient_type" required>
+        <option value="technician">Technician</option>
+        <option value="client">Client</option>
+        <option value="admin">Admin</option>
+        <option value="system">System</option>
+      </select>
+    </div>
+
+    <div class="profile-field">
+      <label>Recipient ID (optional)</label>
+      <input name="recipient_id" placeholder="Leave blank for broadcast">
+    </div>
+
+    <div class="profile-field">
+      <label>Title</label>
+      <input name="title" required>
+    </div>
+
+    <div class="profile-field">
+      <label>Message</label>
+      <textarea name="message" required></textarea>
+    </div>
+
+    <button class="edit-btn" type="submit">Send Notification</button>
+    <p id="sendMessage"></p>
+  </form>
+
+  <h2 class="section-title">Notifications</h2>
+  <div id="notifList"></div>
+
+</main>
+
+<script src="supabase.js"></script>
+<script src="admin-notifications.js"></script>
+
+</body>
+</html>

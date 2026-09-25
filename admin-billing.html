@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing Console</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <h1>Billing Console</h1>
+</header>
+
+<main class="profile-container">
+
+  <div id="billingSummary" class="client-card"></div>
+
+  <h2 class="section-title">Client Invoices</h2>
+  <div id="invoiceList"></div>
+
+  <h2 class="section-title">Create Invoice</h2>
+  <form id="invoiceForm" class="client-card">
+
+    <div class="profile-field">
+      <label>Client</label>
+      <select name="client_id" id="clientSelect" required></select>
+    </div>
+
+    <div class="profile-field">
+      <label>Amount</label>
+      <input type="number" step="0.01" name="total_amount" required>
+    </div>
+
+    <div class="profile-field">
+      <label>Description</label>
+      <input name="description" placeholder="Service description">
+    </div>
+
+    <button class="edit-btn" type="submit">Create Invoice</button>
+    <p id="invoiceMessage"></p>
+  </form>
+
+   <h2 class="section-title">Filters</h2>
+
+<div class="client-card" id="filterBox">
+
+  <div class="profile-field">
+    <label>Client</label>
+    <select id="filterClient">
+      <option value="">All Clients</option>
+    </select>
+  </div>
+
+  <div class="profile-field">
+    <label>Status</label>
+    <select id="filterStatus">
+      <option value="">All</option>
+      <option value="paid">Paid</option>
+      <option value="unpaid">Unpaid</option>
+    </select>
+  </div>
+
+  <div class="profile-field">
+    <label>Date Start</label>
+    <input type="date" id="filterStart">
+  </div>
+
+  <div class="profile-field">
+    <label>Date End</label>
+    <input type="date" id="filterEnd">
+  </div>
+
+  <button class="edit-btn" id="applyFilters">Apply Filters</button>
+  <button class="edit-btn" id="exportCSV">Export CSV</button>
+
+</div>
+
+
+</main>
+
+<script src="supabase.js"></script>
+<script src="admin-billing.js"></script>
+
+</body>
+</html>

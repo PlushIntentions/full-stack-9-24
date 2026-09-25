@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Client Photo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>Upload Client Photo</h1>
+  </header>
+
+  <main class="profile-container">
+
+    <div class="profile-card">
+
+      <img id="currentPhoto" class="profile-photo" src="" alt="Client Photo">
+
+      <div class="profile-field">
+        <label>Select New Photo</label>
+        <input type="file" id="photoInput" accept="image/*">
+      </div>
+
+      <button class="edit-btn" id="uploadBtn">Upload Photo</button>
+
+    </div>
+
+  </main>
+
+  <script src="supabase.js"></script>
+  <script src="client-photo-upload.js"></script>
+</body>
+</html>

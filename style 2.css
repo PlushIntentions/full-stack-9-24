@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  background: #F5E9D3; /* beige */
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background: #C0C0C0; /* silver */
+  padding: 15px;
+  text-align: center;
+}
+
+.add-btn {
+  background: #F7DDE2; /* blush pink */
+  border: none;
+  padding: 12px 20px;
+  margin: 15px;
+  width: calc(100% - 30px);
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+.list {
+  padding: 15px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #C0C0C0;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+}
+.profile-container {
+  padding: 15px;
+}
+
+.profile-card {
+  background: white;
+  border: 1px solid #C0C0C0; /* silver */
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 100px;
+  background: #F7DDE2; /* blush */
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+.profile-field {
+  margin-bottom: 12px;
+}
+
+.profile-field label {
+  font-weight: bold;
+  color: #C0C0C0;
+}
+
+.profile-field span {
+  display: block;
+  font-size: 18px;
+  margin-top: 3px;
+}
+
+.edit-btn {
+  background: #F7DDE2;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: 18px;
+}
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #C0C0C0;
+  border-radius: 8px;
+  margin-top: 5px;
+  background: #F5E9D3;
+}
+
+.edit-btn {
+  background: #F7DDE2;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: 18px;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technician Availability</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>Availability</h1>
+  </header>
+
+  <main class="profile-container">
+    <div class="profile-card">
+
+      <div class="profile-field">
+        <label>Current Availability</label>
+        <div class="toggle-container">
+          <span id="availability-label">Loading...</span>
+          <label class="switch">
+            <input type="checkbox" id="availability-toggle">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+      <button class="edit-btn" id="saveBtn">Save Availability</button>
+
+    </div>
+  </main>
+
+  <script src="supabase.js"></script>
+  <script src="technician-availability.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Communication Log</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>Communication Log</h1>
+  </header>
+
+  <main class="profile-container">
+
+    <div id="commList" class="list">
+      <div class="loading">Loading communication...</div>
+    </div>
+
+    <h2 class="section-title">Send Message</h2>
+
+    <form id="messageForm" class="profile-card">
+
+      <div class="profile-field">
+        <label>Message</label>
+        <textarea name="content"></textarea>
+      </div>
+
+      <div class="profile-field">
+        <label>Sender</label>
+        <input name="sender" placeholder="admin, system, technician, etc.">
+      </div>
+
+      <div class="profile-field">
+        <label>Job ID (optional)</label>
+        <input name="job_id" placeholder="Leave blank to attach to no job">
+      </div>
+
+      <button class="edit-btn" type="submit">Send Message</button>
+    </form>
+
+  </main>
+
+  <script src="supabase.js"></script>
+  <script src="client-communication.js"></script>
+</body>
+</html>

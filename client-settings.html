@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>Settings</h1>
+  </header>
+
+  <main class="profile-container">
+
+    <form id="settingsForm" class="client-card">
+
+      <div class="profile-field">
+        <label>Full Name</label>
+        <input name="full_name">
+      </div>
+
+      <div class="profile-field">
+        <label>Email</label>
+        <input name="email" type="email">
+      </div>
+
+      <div class="profile-field">
+        <label>Phone</label>
+        <input name="phone">
+      </div>
+
+      <div class="profile-field">
+        <label>Address</label>
+        <input name="address">
+      </div>
+
+      <div class="profile-field">
+        <label>Preferred Contact</label>
+        <select name="preferred_contact">
+          <option value="email">Email</option>
+          <option value="phone">Phone</option>
+          <option value="sms">SMS</option>
+        </select>
+      </div>
+
+      <button class="edit-btn" type="submit">Save Settings</button>
+    </form>
+
+    <h2 class="section-title">Change Password</h2>
+
+    <form id="passwordForm" class="client-card">
+      <div class="profile-field">
+        <label>New Password</label>
+        <input name="password" type="password" required>
+      </div>
+
+      <button class="edit-btn" type="submit">Update Password</button>
+    </form>
+
+    <button class="logout-btn" id="logoutBtn">Logout</button>
+
+  </main>
+
+  <script src="supabase.js"></script>
+  <script src="client-settings.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technician Availability</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1>Availability</h1>
+  </header>
+
+  <main class="profile-container">
+    <div class="profile-card">
+
+      <div class="profile-field">
+        <label>Current Availability</label>
+        <div class="toggle-container">
+          <span id="availability-label">Loading...</span>
+          <label class="switch">
+            <input type="checkbox" id="availability-toggle">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+      <button class="edit-btn" id="saveBtn">Save Availability</button>
+
+    </div>
+  </main>
+
+  <script src="supabase.js"></script>
+  <script src="technician-availability.js"></script>
+</body>
+</html>

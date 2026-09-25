@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Center</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>Payment Center</h1>
+  </header>
+
+  <main class="profile-container">
+
+    <h2 class="section-title">Outstanding Invoices</h2>
+    <div id="invoiceList"></div>
+
+    <h2 class="section-title">Pay Invoice</h2>
+
+    <form id="paymentForm" class="client-card">
+
+      <div class="profile-field">
+        <label>Select Invoice</label>
+        <select name="invoice_id" id="invoiceSelect" required></select>
+      </div>
+
+      <div class="profile-field">
+        <label>Card Number</label>
+        <input name="card_number" placeholder="4242 4242 4242 4242" required>
+      </div>
+
+      <div class="profile-field">
+        <label>Expiry</label>
+        <input name="expiry" placeholder="MM/YY" required>
+      </div>
+
+      <div class="profile-field">
+        <label>CVC</label>
+        <input name="cvc" placeholder="123" required>
+      </div>
+
+      <button class="edit-btn" type="submit">Pay Now</button>
+
+      <p id="paymentMessage" style="margin-top:10px;"></p>
+
+    </form>
+
+  </main>
+
+  <script src="supabase.js"></script>
+  <script src="client-payment.js"></script>
+
+</body>
+</html>

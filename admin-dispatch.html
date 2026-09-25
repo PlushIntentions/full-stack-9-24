@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dispatch Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <h1>Dispatch Board</h1>
+</header>
+
+<main class="profile-container">
+
+  <h2 class="section-title">Unassigned Jobs</h2>
+  <div id="unassignedList"></div>
+
+  <h2 class="section-title">Technicians</h2>
+  <div id="techList"></div>
+
+  <h2 class="section-title">Live Map</h2>
+  <button class="view-btn" onclick="openMap()">Open Technician Map</button>
+
+</main>
+
+<script src="supabase.js"></script>
+<script src="admin-dispatch.js"></script>
+
+</body>
+</html>

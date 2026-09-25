@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>Create Your Account</h1>
+  </header>
+
+  <main class="profile-container">
+
+    <form id="registerForm" class="client-card">
+
+      <div class="profile-field">
+        <label>Full Name</label>
+        <input name="full_name" required>
+      </div>
+
+      <div class="profile-field">
+        <label>Email</label>
+        <input name="email" type="email" required>
+      </div>
+
+      <div class="profile-field">
+        <label>Phone</label>
+        <input name="phone">
+      </div>
+
+      <div class="profile-field">
+        <label>Address</label>
+        <input name="address">
+      </div>
+
+      <div class="profile-field">
+        <label>Password</label>
+        <input name="password" type="password" required>
+      </div>
+
+      <button class="edit-btn" type="submit">Create Account</button>
+
+      <p id="registerError" style="color:red; margin-top:10px;"></p>
+
+    </form>
+
+  </main>
+
+  <script src="supabase.js"></script>
+  <script src="client-register.js"></script>
+
+</body>
+</html>
